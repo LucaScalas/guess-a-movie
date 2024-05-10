@@ -1,0 +1,10 @@
+<section class="rankings">
+  <div class="col-8 d-flex align-items-center flex-column text-center mx-auto my-5">
+    <h1>I tuoi movies preferiti</h1>
+        <thead>
+          <tr>
+          <tnv-ranking-detail *ngFor="let data of preferiti" [data]="data"></tnv-ranking-detail>
+          </tr>
+        </thead>
+  </div>
+  </section>

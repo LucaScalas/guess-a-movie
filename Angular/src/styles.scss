@@ -1,0 +1,54 @@
+// ---
+// Material Theme
+// ---
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Color palettes
+@import "./palettes.scss";
+
+
+$tnv-project-template-primary: mat.define-palette($primary-palette);
+$tnv-project-template-accent: mat.define-palette($secondary-palette);
+$tnv-project-template-warn: mat.define-palette(mat.$red-palette);
+
+$tnv-project-template-theme: mat.define-light-theme((
+  color: (
+    primary: $tnv-project-template-primary,
+    accent: $tnv-project-template-accent,
+    warn: $tnv-project-template-warn,
+  )
+));
+
+@include mat.all-component-themes($tnv-project-template-theme);
+
+// ---
+// BOOTSTRAP Theme
+// ---
+$primary: map-get($primary-palette, 700);
+$secondary: map-get($secondary-palette, 300);
+$font-family-sans-serif: 'Roboto', sans-serif;
+
+@import "bootstrap/scss/bootstrap";
+
+
+// GLOBAL STYLES qui sotto
+
+label {
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: bold;
+}
+
+ngb-rating {
+  color: $primary;
+}
+
+html, body { height: 100%; }
+    
+    body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif ; color: white;    background-color: rgb(0, 0, 19);     }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
